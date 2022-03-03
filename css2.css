@@ -1,0 +1,48 @@
+body {
+
+    font-family: "Roboto", sans-serif;
+}
+
+.acc{
+
+    font-family: "Auto Techno", sans-serif;
+    font-size: 126px;
+    color: goldenrod;
+    text-align: center; 
+    CURSOR: hand;
+    
+}
+
+.acc2{
+
+    color: goldenrod;
+    font-size: 100%;
+    text-align: center;
+    
+}
+
+#ind3{
+
+    padding: 0;
+    min-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+#info{
+
+  padding: 30px;
+  background-color: grey;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  padding: 10px 5px 10px 30px;
+  border: 1px;
+  border-radius: 5px;
+  position: absolute; /* positionné par rapport à son parent le plus proche positionné */
+  left: 700px;
+  outline: none;
+}

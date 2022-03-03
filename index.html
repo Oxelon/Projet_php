@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <title>Emina</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link href="./css.css" rel="stylesheet">
+    </head>
+
+
+
+
+    <body style="background-color:#4b4b4b;">
+        
+            <div class= "acc">
+                <span id= "ena"><a href="index.html" style="color: goldenrod;">Emina</a></span>
+            </div>
+
+        <div class= "acc2">
+            <span id= "bvn"><p><FONT size="5pt">Bienvenue tu pourras trouver tout un tas d'animé ici alors balade toi et trouve ton bonheur :)</FONT></p></span>
+        </div>
+
+            <nav>
+                <ul>
+                    <div class="ind" id="ind2">
+                        <a href="index.html" style="color: goldenrod;">Page d'acceuil</a>
+                        <a href="list.html" style="color: goldenrod;">La fameuse Liste</a>
+                        <a href="notation.html" style="color: goldenrod;">Pour noter</a>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="container">            
+            <form action="verification.php" method="POST">
+                <h1>Connexion</h1>
+                
+                <label><b>Nom d'utilisateur</b></label>
+                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+
+                <label><b>Mot de passe</b></label>
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+                <input type="submit" id='submit' value='LOGIN' >
+                <?php
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                }
+                ?>
+                <?php
+                    session_start();
+                    if(isset($_POST['username']) && isset($_POST['password']))
+                    {
+                        $db_username = 'root';
+                        $db_password = 'mot_de_passe_bdd';
+                        $db_host     = 'localhost';
+                        $db = mysqli_connect($db_host, $db_username, $db_password,$db_name) or die('could not connect to database');
+    
+                        $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
+                        $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+    
+                        if($username !== "" && $password !== "")
+                    {
+                        $requete = "SELECT count(*) FROM utilisateur where 
+                                nom_utilisateur = '".$username."' and mot_de_passe = '".$password."' ";
+                        $exec_requete = mysqli_query($db,$requete);
+                        $reponse      = mysqli_fetch_array($exec_requete);
+                        $count = $reponse['count(*)'];
+                    if($count!=0)
+                    {
+                        $_SESSION['username'] = $username;
+                        header('Location: principale.php');
+                    }
+                else
+                    {
+                        header('Location: login.php?erreur=1');
+                    }
+                }                  
+                else
+                {       
+                        header('Location: login.php?erreur=2'); 
+                }
+            }
+                else
+            {
+                        header('Location: login.php');
+        }
+            mysqli_close($db);
+        ?>
+        <div id="content">
+            <?php
+                session_start();
+                if($_SESSION['username'] !== ""){
+                    $user = $_SESSION['username'];
+                    echo "Bonjour $user, vous êtes connecté";
+                }
+            ?>
+            
+        </div>
+            </form>
+
+            <div id="content">
+            
+            <a href='principale.php?deconnexion=true'><span>Déconnexion</span></a>
+            
+            <?php
+                session_start();
+                if(isset($_GET['deconnexion']))
+                { 
+                   if($_GET['deconnexion']==true)
+                   {  
+                      session_unset();
+                      header("location:login.php");
+                   }
+                }
+                else if($_SESSION['username'] !== ""){
+                    $user = $_SESSION['username'];
+                    echo "<br>Bonjour $user, vous êtes connectés";
+                }
+            ?>
+            
+            </div>
+        </div>
+    </body>
+</html>

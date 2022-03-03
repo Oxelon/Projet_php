@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="Firefox">
+        <title>Emina</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link href="./css1.css" rel="stylesheet">
+    </head>
+
+    <body style="background-color:#4b4b4b;">
+
+
+            <?php
+                $dsn = 'mysql:host=195.168.65.78, dbname=Anime; port=3030; charset=utf-8';
+                $pdo = new PDO($dsn, 'User', 'root');
+
+            ?>
+            <div class= "acc">
+                <span id= "ena"><a href="index.html" style="color: goldenrod;">Emina</a></span>
+            </div>
+
+            <div class= "acc2">
+                <span id= "bvn"><p><FONT size="5pt">Ici tu auras une liste de A à Z des animés:)</FONT></p></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <div class="ind" id="ind1">
+                        <a href="index.html" style="color: goldenrod;">Page d'acceuil</a>
+                        <a href="list.html" style="color: goldenrod;">La fameuse Liste</a>
+                        <a href="notation.html" style="color: goldenrod;">Pour noter</a>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="liste" style="color: goldenrod;">
+                <p class="has-large-font-size" id="#">
+                    <strong>#</strong>
+                </p>
+                <p class="has-large-font-size" id="A">
+                    <strong>A</strong>                                                          <!--affichage des noms de tout les animés-->
+                    <a href="info.html?id=10">Assassination classroom</a>
+                </p>
+                <p class="has-large-font-size" id="B">
+                    <strong>B</strong>
+                    <a href="info.html?id=8">Bleach</a>
+                </p>
+                <p class="has-large-font-size" id="C">
+                    <strong>C</strong>
+                    <a href="info.html?id=21">Code Geass</a>
+                </p>
+                <p class="has-large-font-size" id="D">
+                    <strong>D</strong>
+                    <a href="info.html?id=4">Demon slayer</a>
+                    <a href="info.html?id=14">Dragon Ball</a>
+                </p>
+                <p class="has-large-font-size" id="E">
+                    <strong>E</strong>
+                    <a href="info.html?id=19">Evangelion</a>
+                </p>
+                <p class="has-large-font-size" id="F">
+                    <strong>F</strong>
+                    <a href="info.html?id=11">Fairy tail</a>
+                </p>
+                <p class="has-large-font-size" id="G">
+                    <strong>G</strong>
+                    <a href="info.html?id=22">GTO</a>
+                </p>
+                <p class="has-large-font-size" id="H">
+                    <strong>H</strong>
+                    <a href="info.html?id=9">Hunter x Hunter</a>
+                </p>
+                <p class="has-large-font-size" id="I">
+                    <strong>I</strong>
+                    <a href="info.html?id=7">Inazuma eleven</a>
+                </p>
+                <p class="has-large-font-size" id="J">
+                    <strong>J</strong>
+                    <a href="info.html?id=20">Jojo</a>
+                </p>
+                <p class="has-large-font-size" id="K">
+                    <strong>K</strong>
+                    <a href="info.html?id=23">Kuroko No Basket</a>
+                </p>
+                <p class="has-large-font-size" id="L">
+                    <strong>L</strong>
+                    <a href="info.html?id=24">Li Shi</a>
+                </p>
+                <p class="has-large-font-size" id="M">
+                    <strong>M</strong>
+                    <a href="info.html?id=16">My hero academia</a>
+                </p>
+                <p class="has-large-font-size" id="N">
+                    <strong>N</strong>
+                    <a href="info.html?id=1">Naruto</a>
+                </p>
+                <p class="has-large-font-size" id="O">
+                    <strong>O</strong>
+                    <a href="info.html?id=2">One Piece</a>
+                    <a href="info.html?id=17">One punch man</a>
+                </p>
+                <p class="has-large-font-size" id="P">
+                    <strong>P</strong>
+                    <a href="info.html?id=25">Pokemon</a>
+                </p>
+                <p class="has-large-font-size" id="Q">
+                    <strong>Q</strong>
+                    <a href="info.html?id=26">Quanzi Fashi</a>
+                </p>
+                <p class="has-large-font-size" id="R">
+                    <strong>R</strong>
+                    <a href="info.html?id=27">Re:Zero</a>
+                </p>
+                <p class="has-large-font-size" id="S">
+                    <strong>S</strong>
+                    <a href="info.html?id=3">Sword Art Online</a>
+                </p>
+                <p class="has-large-font-size" id="T">
+                    <strong>T</strong>
+                    <a href="info.html?id=15">The Seven Deadly Sins</a>
+                </p>
+                <p class="has-large-font-size" id="U">
+                    <strong>U</strong>
+                    <a href="info.html?id=28">Umayon</a>
+                </p>
+                <p class="has-large-font-size" id="V">
+                    <strong>V</strong>
+                    <a href="info.html?id=13">Valkyrie Apocalypse</a>
+                </p>
+                <p class="has-large-font-size" id="W">
+                    <strong>W</strong>
+                    <a href="info.html?id=29">Wu Geng Ji</a>
+                </p>
+                <p class="has-large-font-size" id="X">
+                    <strong>X</strong>
+                    <a href="info.html?id=30">Xiang Ling Ji</a>
+                </p>
+                <p class="has-large-font-size" id="Y">
+                    <strong>Y</strong>
+                    <a href="info.html?id=31">Yuushibu</a>
+                </p>
+                <p class="has-large-font-size" id="Z">
+                    <strong>Z</strong>
+                    <a href="info.html?id=18">Zero</a>
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>
